@@ -29,3 +29,8 @@ Matrix focuses on UDS, ISO-TP, J2534 and ECU flashing capabilities.
 - ✔️ = Full support  
 - ⚠️ = Partial / limited / experimental  
 - ❌ = Not supported  
+
+
+> ╔══════════════════════════════════════╗  
+>           IGOR NIEMIEC SYSTEMS  
+> ╚══════════════════════════════════════╝
