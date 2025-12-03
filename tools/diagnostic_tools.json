@@ -1,0 +1,114 @@
+{
+  "tools": [
+    {
+      "name": "python-udsoncan",
+      "url": "https://github.com/pylessard/python-udsoncan",
+      "language": "Python",
+      "category": "UDS / ISO-14229",
+      "status": "active",
+      "description": "Full-featured UDS diagnostic implementation supporting ISO-14229 routines, sessions, security access, and custom services.",
+      "pros": ["Mature", "Well documented", "Complete UDS client", "Great for scripting and research"],
+      "cons": ["No GUI", "Requires external CAN backend"],
+      "tags": ["UDS", "ISO-TP", "Diagnostics", "ECU"]
+    },
+    {
+      "name": "OpenVehicleDiag",
+      "url": "https://github.com/rnd-ash/OpenVehicleDiag",
+      "language": "Rust",
+      "category": "Diagnostics Platform",
+      "status": "active",
+      "description": "Cross-platform Rust-based diagnostic framework supporting UDS, SocketCAN, J2534 and GUI tools.",
+      "pros": ["Cross-platform", "Modern", "Multiple backends", "Actively developed"],
+      "cons": ["Not OEM-level", "Still evolving"],
+      "tags": ["Rust", "UDS", "J2534", "GUI", "SocketCAN"]
+    },
+    {
+      "name": "SavvyCAN",
+      "url": "https://github.com/collin80/SavvyCAN",
+      "language": "C++/Qt",
+      "category": "CAN Sniffer / Analyzer",
+      "status": "active",
+      "description": "One of the most advanced open-source CAN sniffers with visualization, logging, DBC handling and reverse-engineering tools.",
+      "pros": ["Huge feature set", "Excellent UI", "Ideal for CAN reverse engineering"],
+      "cons": ["Not focused on UDS"],
+      "tags": ["CAN", "DBC", "Reverse Engineering", "Sniffer"]
+    },
+    {
+      "name": "awesome-canbus",
+      "url": "https://github.com/iDoka/awesome-canbus",
+      "language": "Markdown",
+      "category": "Tool Index",
+      "status": "active",
+      "description": "Curated list of CAN, UDS and automotive reverse-engineering tools, hardware and learning materials.",
+      "pros": ["Massive index", "Good discovery tool"],
+      "cons": ["Not a tool itself"],
+      "tags": ["CAN", "Index", "Learning"]
+    },
+    {
+      "name": "ECU-Simulator",
+      "url": "https://github.com/lbenthins/ecu-simulator",
+      "language": "Python",
+      "category": "ECU Simulator",
+      "status": "sporadic",
+      "description": "Simulator for ECU responses to UDS/OBD requests—ideal for safe experimentation without a real vehicle.",
+      "pros": ["Safe testing", "Educational", "UDS routines"],
+      "cons": ["Limited scope", "Not complete ECU behavior"],
+      "tags": ["Simulator", "UDS", "Testing"]
+    },
+    {
+      "name": "isotp (Linux ISO-TP stack)",
+      "url": "https://github.com/hartkopp/can-isotp",
+      "language": "C",
+      "category": "ISO-TP Transport",
+      "status": "active",
+      "description": "Linux kernel module and userspace tools for ISO-TP transport — mandatory for UDS on SocketCAN.",
+      "pros": ["Reliable", "Industry standard", "Required for UDS"],
+      "cons": ["Linux-only"],
+      "tags": ["ISO-TP", "SocketCAN", "Transport"]
+    },
+    {
+      "name": "python-can",
+      "url": "https://github.com/hardbyte/python-can",
+      "language": "Python",
+      "category": "CAN Backend & Tools",
+      "status": "active",
+      "description": "Major Python CAN interface, supporting dozens of CAN adapters and SocketCAN.",
+      "pros": ["Huge adapter support", "Stable", "Perfect for scripting"],
+      "cons": ["No built-in UDS"],
+      "tags": ["CAN", "Backend"]
+    },
+    {
+      "name": "cantools",
+      "url": "https://github.com/cantools/cantools",
+      "language": "Python",
+      "category": "DBC Decoder",
+      "status": "active",
+      "description": "DBC, KCD and SYM parser for CAN databases, widely used in automotive research.",
+      "pros": ["Essential for DBC work", "Simple API"],
+      "cons": ["Not diagnostic-focused"],
+      "tags": ["DBC", "Parser", "CAN"]
+    },
+    {
+      "name": "CANdevStudio",
+      "url": "https://github.com/CANdevStudio/CANdevStudio",
+      "language": "C++/Qt",
+      "category": "CAN Simulation",
+      "status": "active",
+      "description": "Powerful CAN message simulator with nodes, scripting and visualization.",
+      "pros": ["Feature-rich", "Supports scripting"],
+      "cons": ["Requires setup"],
+      "tags": ["Simulator", "CAN"]
+    },
+    {
+      "name": "UDSim",
+      "url": "https://github.com/jglim/UDSim",
+      "language": "C++",
+      "category": "UDS Simulation",
+      "status": "active",
+      "description": "Advanced UDS simulator for fuzzing and testing diagnostic clients.",
+      "pros": ["Flexible", "Useful for R&D"],
+      "cons": ["Not a full ECU"],
+      "tags": ["UDS", "Fuzzing", "Simulator"]
+    }
+  ]
+}
