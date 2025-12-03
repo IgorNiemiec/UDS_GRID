@@ -1,73 +1,95 @@
- ██████╗ █████╗ ███╗   ██╗     ██████╗ ██╗   ██╗███████╗
-██╔════╝██╔══██╗████╗  ██║    ██╔═══██╗██║   ██║██╔════╝
-██║     ███████║██╔██╗ ██║    ██║   ██║██║   ██║█████╗  
-██║     ██╔══██║██║╚██╗██║    ██║▄▄ ██║██║   ██║██╔══╝  
-╚██████╗██║  ██║██║ ╚████║    ╚██████╔╝╚██████╔╝███████╗
- ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝     ╚══▀▀═╝  ╚═════╝ ╚══════╝
+# TRON DIAGNOSTICS
 
+     ██████╗ █████╗ ███╗   ██╗     ██████╗ ██╗   ██╗███████╗
+    ██╔════╝██╔══██╗████╗  ██║    ██╔═══██╗██║   ██║██╔════╝
+    ██║     ███████║██╔██╗ ██║    ██║   ██║██║   ██║█████╗  
+    ██║     ██╔══██║██║╚██╗██║    ██║▄▄ ██║██║   ██║██╔══╝  
+    ╚██████╗██║  ██║██║ ╚████║    ╚██████╔╝╚██████╔╝███████╗
+     ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝     ╚══▀▀═╝  ╚═════╝ ╚══════╝
 
-The Controller Area Network (CAN) is the central nervous system of modern vehicles.
-It allows ECUs (Electronic Control Units) to communicate without a central computer orchestrating them.
+------------------------------------------------------------------------
 
-Originally designed by Robert Bosch GmbH, CAN has become the ISO standard (ISO 11898) for inter-module communication in automotive, industrial, aerospace and robotics sectors.
+# 🛰️ Controller Area Network (CAN)
 
+The **Controller Area Network (CAN)** is the central nervous system of
+modern vehicles.\
+It allows ECUs (Electronic Control Units) to communicate without needing
+a central computer.
 
-**Why CAN Matters in Diagnostics?
+Originally created by **Robert Bosch GmbH**, CAN evolved into the global
+standard:\
+**ISO 11898** --- used in automotive, industrial, aerospace and robotics
+systems.
 
-Every modern car relies on CAN for:
+------------------------------------------------------------------------
 
-✔ Reading live telemetry
-✔ ECU diagnostics (UDS / KWP2000 / OBD-II)
-✔ Safety systems (ABS, ESP, Airbags)
-✔ Powertrain data
-✔ Immobilizer handshake signaling
-✔ Firmware flashing (Bootloader protocols)
+## 🚗 Why CAN Matters in Diagnostics
 
-Your diagnostic tools (J2534, Mongoose, VCX, etc.) operate entirely through CAN or CAN-based protocols.
+Every modern car uses CAN for:
 
-**CAN Bus — Technical Overview
+-   ✔ Live telemetry\
+-   ✔ ECU diagnostics (UDS / KWP2000 / OBD-II)\
+-   ✔ ABS / ESP / Airbag communication\
+-   ✔ Powertrain data\
+-   ✔ Immobilizer handshake\
+-   ✔ Firmware flashing (bootloaders)
 
-Voltage Levels
+All diagnostic tools (J2534, Mongoose, VCX, Techstream, IDS, ODIS etc.)
+operate entirely on CAN or CAN-based protocols.
 
-Recessive (1): CAN_H ≈ 2.5V / CAN_L ≈ 2.5V
+------------------------------------------------------------------------
 
-Dominant (0): CAN_H ≈ 3.5V / CAN_L ≈ 1.5V
+# ⚡ CAN Bus --- Technical Overview
+
+## 🔌 Voltage Levels
+
+  State           CAN_H     CAN_L
+  --------------- --------- ---------
+  Recessive (1)   ≈ 2.5 V   ≈ 2.5 V
+  Dominant (0)    ≈ 3.5 V   ≈ 1.5 V
 
 Differential signaling provides:
 
-Noise immunity
+-   Noise immunity\
+-   Long-cable reliability\
+-   Safety-critical communication integrity
 
-Long cable reliability
+------------------------------------------------------------------------
 
-Safety-critical communication
+## 🚀 Bus Speeds
 
-2. Bus Speeds
+  Speed            Usage
+  ---------------- -----------------------------------
+  125 kbps         Comfort modules
+  250 kbps         Body CAN, Gateway
+  500 kbps         Powertrain (engine, ABS, gearbox)
+  1 Mbps           High-performance ECUs
+  2--5 Mbps (FD)   Modern CAN-FD systems
 
-** Speed	       ** Usage
-125 kbps	    Comfort modules
-250 kbps	    Body CAN, Gateway
-500 kbps	    Powertrain (engine, ABS, gearbox)
-1 Mbps	        High-performance ECUs, some gateways
-2–5 Mbps (FD)	CAN FD – modern ECUs, faster diagnostics
+**Toyota Yaris 2012:**\
+- 500 kbps --- Powertrain\
+- 250 kbps --- Body CAN
 
-Toyota Yaris 2012 uses: 500 kbps for powertrain CAN and 250 kbps for body CAN
+------------------------------------------------------------------------
 
+# 🧪 UDS Example
 
-Example (UDS request):
+### ▶ Request
 
-ID: 0x7E0
-DATA: 02 10 01 55 55 55 55 55
-Meaning: DiagnosticSessionControl (start extended session)
+    ID: 0x7E0
+    DATA: 02 10 01 55 55 55 55 55
 
+Meaning: **DiagnosticSessionControl -- start extended session**
 
-Response example:
+### ◀ Response
 
-ID: 0x7E8
-DATA: 02 50 01 55 55 55 55 55
-Meaning: Positive Response
+    ID: 0x7E8
+    DATA: 02 50 01 55 55 55 55 55
 
+Meaning: **Positive Response**
 
-╔══════════════════════════════════════╗
-          IGOR NIEMIEC SYSTEMS
-╚══════════════════════════════════════╝
+------------------------------------------------------------------------
 
+    ╔══════════════════════════════════════╗
+            IGOR NIEMIEC SYSTEMS
+    ╚══════════════════════════════════════╝
